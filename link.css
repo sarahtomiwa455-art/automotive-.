@@ -1,0 +1,120 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: url(./images/download\ \(3\).jpg) no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Login Container */
+.login-container {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2rem;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.login-box h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #ff9800;
+}
+
+.login-box p {
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Form */
+.form-group {
+  text-align: left;
+  margin-bottom: 1.2rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+input {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  background: #222;
+  color: #fff;
+  font-size: 1rem;
+}
+
+input:focus {
+  border: 1px solid #ff9800;
+  background: #111;
+}
+
+/* Button */
+.btn {
+  width: 100%;
+  padding: 0.9rem;
+  background: #ff9800;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.btn:hover {
+  background: #e68900;
+  transform: scale(1.03);
+}
+
+/* Extras */
+.extras {
+  margin-top: 1.2rem;
+  font-size: 0.9rem;
+}
+
+.extras a {
+  color: #ff9800;
+  text-decoration: none;
+}
+
+.extras a:hover {
+  text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 1.5rem;
+  }
+
+  .login-box h2 {
+    font-size: 1.5rem;
+  }
+}

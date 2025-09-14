@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automotive Order</title>
+  <link rel="stylesheet" href="/asset/order.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="container">  
+      <div class="logo">
+        <i class="fas fa-car"></i> Automotive
+      </div>
+      <ul>
+        <li><a href="index.html" class="selected">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="booking.html" class="highlight">Book Appointment</a></li>
+      </ul>
+      <div class="hamburger">&#9776;</div>
+    </nav>
+  </header>
+
+  <!-- Order Section -->
+  <section id="order">
+    <h2>Order Now</h2>
+    <form id="orderForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <input type="text" id="carModel" placeholder="Car Model" required>
+      <input type="text" id="carName" placeholder="Car Name" required>
+      <input type="text" id="address" placeholder="Your Address" required>
+      <input type="text" id="carSize" placeholder="Car Size" required>
+      <input type="text" id="phone" placeholder="Your Phone Number" required>
+
+      <button type="submit">ORDER NOW</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Automotive Services. All rights reserved.</p>
+  </footer>
+
+  <!-- Script for WhatsApp -->
+  <script>
+    document.getElementById("orderForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      // Collect form data
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let carModel = document.getElementById("carModel").value;
+      let carName = document.getElementById("carName").value;
+      let address = document.getElementById("address").value;
+      let carSize = document.getElementById("carSize").value;
+      let phone = document.getElementById("phone").value;
+
+      // WhatsApp Number
+      let whatsappNumber = "2348147265375"; // ✅ Your number without + or spaces
+
+      // Message to send
+      let message = `Hello, I want to place an order:%0A
+      Name: ${name}%0A
+      Email: ${email}%0A
+      Car Model: ${carModel}%0A
+      Car Name: ${carName}%0A
+      Address: ${address}%0A
+      Car Size: ${carSize}%0A
+      Phone: ${phone}`;
+
+      // Open WhatsApp
+      window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+    });
+  </script>
+</body>
+</html>

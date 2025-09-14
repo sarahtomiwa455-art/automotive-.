@@ -1,0 +1,141 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav .logo {
+    font-size: 2.5rem;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li a {
+    color: rgb(224, 13, 13);
+    padding: 1rem;
+    text-decoration: none;
+    text-align: end;
+}
+.container ul li a:hover{
+    font-size: 18px;
+    color: grey;
+    transition: scale(1.1);
+}
+
+.selected {
+    font-weight: bold;
+}
+
+.highlight {
+    background-color: rgb(17, 17, 119);
+    color: rgb(236, 15, 15);
+    padding: 1rem;
+    text-decoration: none;
+    border-radius: 20px;
+}
+.highlight:hover{
+    color: grey;
+    transition: 2s;
+    font-size: 20px;
+}
+#contact {
+    background: #0679ec;
+    padding: 4rem 0 8rem;
+}
+
+#contact h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+#form-container {
+    width: 58%;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-name: example;
+    padding: 3rem;
+    box-sizing: border-box;
+    height: 0%;
+
+    
+}
+
+@keyframes example{
+    0%{background-color: blue;}
+    25%{background-color: green;}
+    50%{background-color: rgb(233, 12, 26);}
+    75%{background-color: rgb(49, 247, 31);}
+   100%{background-color: rgb(255, 0, 191);}
+
+
+}
+
+#form-container h3 {
+    color: #000;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 2rem;
+}
+
+#form-container label {
+    display: block;
+    color: #000;
+    margin-top: 1rem;
+}
+
+#form-container input,
+#form-container textarea {
+    display: block;
+    border-radius: 20px;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    width: 100%;
+    box-sizing: border-box;
+    height: 43px;
+    font-family: "Roboto", "Helvetica", "Sans-serif";
+    font-size: 1rem;
+    color: #495057;
+}
+
+#form-container textarea {
+    height: 170px;
+    margin-bottom: 2rem;
+    resize: none;
+}
+
+#address-container {
+    width: 38%;
+    background: #fff;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    height: 0%;animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-name: example;
+    
+}
+
+#address-container label {
+    font-weight: 700;
+    display: block;
+    margin-top: 2rem;
+}
+
+#address-container label:first-child {
+    margin-top: 0;
+}
+
+#address-container address {
+    margin-bottom: 1.5rem;
+    font-style: normal;
+}
+
+#address-container a {
+    text-decoration: none;
+    color: #f69314;
+}
+
+#address-container a:hover {
+    text-decoration: underline;
+}

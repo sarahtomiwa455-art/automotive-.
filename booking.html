@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automotive | Book Appointment</title>
+  <script src="project.js" defer></script>
+
+  <style>
+    /* ====== Global Styles ====== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Roboto", sans-serif;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 1rem;
+    }
+
+    /* ====== Navbar ====== */
+    header {
+      background: #111;
+      color: #fff;
+      padding: 1rem 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.selected {
+      color: #ffb400;
+    }
+
+    nav ul li a.highlight {
+      background: #ffb400;
+      padding: 8px 15px;
+      border-radius: 25px;
+      color: #111;
+      font-weight: bold;
+    }
+
+    /* ====== Appointment Section ====== */
+    #contact {
+      background: #fff;
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin-top: 2rem;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    #contact h2 {
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 2rem;
+      color: #111;
+    }
+
+    #contact p {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #555;
+    }
+
+    .appointment-form {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      outline: none;
+      font-size: 1rem;
+      transition: 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #ffb400;
+      box-shadow: 0 0 5px rgba(255,180,0,0.3);
+    }
+
+    /* Button */
+    .btn-submit {
+      background: #ffb400;
+      color: #111;
+      padding: 14px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .btn-submit:hover {
+      background: #e0a200;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    /* ====== Footer ====== */
+    footer {
+      background: #111;
+      color: #ddd;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+      border-top: 3px solid #ffb400;
+    }
+
+    footer a {
+      color: #ffb400;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* ====== Animations ====== */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <!-- ====== Header / Navbar ====== -->
+  <header>
+    <nav class="container">
+      <div class="logo">
+        <i class="fas fa-car"></i> <span>Automotive</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="selected">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="c.html">Contact</a></li>
+        <li><a href="booking.html" class="highlight">Book Appointment</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ====== Appointment Section ====== -->
+  <main>
+    <section id="contact" class="container">
+      <h2>Book Your Appointment</h2>
+      <p>Please fill in the form below and we’ll get back to you shortly.</p>
+
+      <form action="submit.php" method="POST" class="appointment-form">
+        <div class="form-group">
+          <label for="name">Full Name <span>*</span></label>
+          <input type="text" id="name" name="name" placeholder="John Doe" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address <span>*</span></label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="+234 803 803 4589">
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" id="address" name="address" placeholder="Your Address">
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message <span>*</span></label>
+          <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- ====== Footer ====== -->
+  <footer>
+    <div class="container">
+      <p><strong>Address:</strong> Lekki Phase 4, Lagos</p>
+      <p><strong>Phone:</strong> <a href="tel:+2348038034589">+234 803 803 4589</a></p>
+      <p>&copy; 2025 Automotive Services. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
